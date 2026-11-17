@@ -5,6 +5,7 @@ importScripts('https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging-comp
 const firebaseConfig = {
   apiKey: "AIzaSyC0Bdfcw2qf3pGXgvWCJtNOFGV4fJJt34s",
   authDomain: "probashi-seba-desk.firebaseapp.com",
+  databaseURL: "https://probashi-seba-desk-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "probashi-seba-desk",
   storageBucket: "probashi-seba-desk.firebasestorage.app",
   messagingSenderId: "450175481492",
