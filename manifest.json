@@ -1,0 +1,19 @@
+{
+  "id": "com.probashisebadesk.my",
+  "name": "প্রবাসী সেবা ডেস্ক - মালয়েশিয়া",
+  "short_name": "প্রবাসী সেবা",
+  "description": "মালয়েশিয়া প্রবাসীদের জন্য অফিসিয়াল সেবা ও লিংক পোর্টাল",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#047857",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
