@@ -102,10 +102,11 @@
         প্যাকেজ: <span class="text-slate-700 font-bold">com.probashisebadesk.my</span> • সিকিউরড ক্লাউড বেসড
     </footer>
 
-    <!-- Firebase SDK Setup & Logic -->
+    <!-- Firebase SDK Setup & Logic (Notification Included) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, getDocs, query, orderBy, where } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging.js";
 
         // আপনার ফায়ারবেজ কনফিগারেশন এখানে বসান
         const firebaseConfig = {
@@ -119,6 +120,7 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+        const messaging = getMessaging(app);
 
         let allModules = [];
         let currentCategory = 'all';
@@ -126,6 +128,19 @@
         const loader = document.getElementById('loader');
         const emptyState = document.getElementById('empty-state');
         const categoryTabs = document.getElementById('category-tabs');
+
+        // Request Push Notification Permission
+        async function requestNotificationPermission() {
+            try {
+                const permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                    const token = await getToken(messaging, { vapidKey: 'YOUR_PUBLIC_VAPID_KEY_HERE' });
+                    console.log('FCM Token:', token);
+                }
+            } catch (error) {
+                console.error('Notification Permission Error:', error);
+            }
+        }
 
         async function fetchModules() {
             try {
@@ -227,11 +242,15 @@
             });
         }
 
+        // Call notification permission request on load along with fetch
+        window.addEventListener('load', () => {
+            requestNotificationPermission();
+            fetchModules();
+        });
+
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
         }
-
-        fetchModules();
     </script>
 </body>
 </html>
