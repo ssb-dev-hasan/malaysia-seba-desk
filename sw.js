@@ -2,14 +2,15 @@ importScripts('https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js'
 importScripts('https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging-compat.js');
 
 // ফায়ারবেজ কনফিগারেশন (আপনার কনফিগারেশন এখানেও দিতে হবে)
-firebase.initializeApp({
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-});
+const firebaseConfig = {
+  apiKey: "AIzaSyC0Bdfcw2qf3pGXgvWCJtNOFGV4fJJt34s",
+  authDomain: "probashi-seba-desk.firebaseapp.com",
+  projectId: "probashi-seba-desk",
+  storageBucket: "probashi-seba-desk.firebasestorage.app",
+  messagingSenderId: "450175481492",
+  appId: "1:450175481492:web:f63eae5a3336fffb452681",
+  measurementId: "G-8KNM1F5JNM"
+};
 
 const messaging = firebase.messaging();
 
