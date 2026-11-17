@@ -135,7 +135,7 @@
             try {
                 const permission = await Notification.requestPermission();
                 if (permission === 'granted') {
-                    const token = await getToken(messaging, { vapidKey: 'YOUR_PUBLIC_VAPID_KEY_HERE' });
+                    const token = await getToken(messaging, { vapidKey: 'BKpQQZib7FWUWBmb4wQxqgpOEAD-KxnJ4DXhwYVq2tZ2AsS-qhP2C0IIXROXZQF-kpOI0LFMY4aJqUCDZCEG0OM' });
                     console.log('FCM Token:', token);
                 }
             } catch (error) {
