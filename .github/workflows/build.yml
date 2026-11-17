@@ -33,7 +33,7 @@ jobs:
 
     - name: Initialize Capacitor & Add Android
       run: |
-        npx cap init "প্রবাসী সেবা ডেস্ক" "com.probashisebadesk.my" --web-dir www --npm-client npm
+        npx cap init "প্রবাসী সেবা ডেস্ক" "com.probashisebadesk.my" --web-dir www
         npx cap add android
 
     - name: Build Debug APK
@@ -57,3 +57,4 @@ jobs:
       with:
         name: Probashi-Seba-Desk-AAB
         path: android/app/build/outputs/bundle/release/app-release.aab
+        
